@@ -1,43 +1,70 @@
-.calcBody{
-    border: 5px solid rgb(131, 125, 125);
-    border-radius: 10px;
-    height: 50%;
-    width: 45%;
+.calcBody {
+   border: 5px solid #28597a;
+   border-radius: 10px;
+   height: 350px;
+   width: 320px;
+   margin: 10% 25% 100% 38%;
+   background-color: #708796;
+}
 
+.display {
+   border: 3px solid #65a9d7;
+   border-radius: 10px;
+   height: 70px;
+   width: 280px;
+   margin: 10px 10px 10px 17px;
+   background-color: #e6eaec;
+}
+
+.displaySum {
+   width: 30px;
+   height: 35px;
+   background-color: #e6eaec;
+   border: none;
+   font-size: 50px;
+   text-align: center;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   margin: 9% 0% 0% 85%;
+   padding-bottom: 3%;
 }
 
 .button {
-    border-top: 1px solid #96d1f8;
-    background: #65a9d7;
-    background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
-    background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
-    background: -moz-linear-gradient(top, #3e779d, #65a9d7);
-    background: -ms-linear-gradient(top, #3e779d, #65a9d7);
-    background: -o-linear-gradient(top, #3e779d, #65a9d7);
-    padding: 7.5px 15px;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    border-radius: 40px;
-    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-    box-shadow: rgba(0,0,0,1) 0 1px 0;
-    text-shadow: rgba(0,0,0,.4) 0 1px 0;
-    color: white;
-    font-size: 13px;
-    font-family: Georgia, serif;
-    text-decoration: none;
-    vertical-align: middle;
-    margin: 10px;
-    outline: none;
-    }
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 7.5px 15px;
+   -webkit-border-radius: 40px;
+   -moz-border-radius: 40px;
+   border-radius: 40px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 13px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin: 8px;
+   outline: none;
+   }
 
  .button:hover {
-    border-top-color: #28597a;
-    background: #28597a;
-    color: #ccc;
-    }
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
 
  .button:active {
-    border-top-color: #1b435e;
-    background: #1b435e;
-    }
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+.numbers {
+   position: abosolute;
+   padding: 10px 0px 0px 44px;
+}
