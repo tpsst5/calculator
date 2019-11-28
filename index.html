@@ -7,30 +7,39 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: rgb(60, 143, 199);">
-    <div class = "calcBody">
-        <div class = "display">
-            <input value = "0" type = "text" readonly = "readonly" class = "displaySum">
-        </div>
-        <div class = "numbers">
-            <button type = "button" class = "button">9</button>
-            <button type = "button" class = "button">8</button>
-            <button type = "button" class = "button">7</button>
-            <button type = "button" class = "operator">+</button>
-            <button type = "button" class = "button">6</button>
-            <button type = "button" class = "button">5</button>
-            <button type = "button" class = "button">4</button>
-            <button type = "button" class = "operator">-</button>
-            <button type = "button" class = "button">3</button>
-            <button type = "button" class = "button">2</button>
-            <button type = "button" class = "button">1</button>
-            <button type = "button" class = "operator">*</button>
-            <button type = "button" class = "button">0</button>
-            <button type = "button" class = "button">.</button>
-            <button type = "button" class = "button">=</button>
-            <button type = "button" class = "operator">/</button>
-        </div>
+<body style="background-color: rgb(147, 195, 228);">
+
+<div class="calculator">
+
+    <input type="text" class="calculator-screen" value="0" disabled />
+
+    <div class="calculator-keys">
+
+        <button type="button" class="delete" value="delete">DEL</button>
+        <button type="button" class="all-clear" value="all-clear">AC</button>
+        <button type="button" class="operator" value="/">&divide;</button>
+
+        <button type="button" value="7">7</button>
+        <button type="button" value="8">8</button>
+        <button type="button" value="9">9</button>
+        <button type="button" class="operator" value="X">&times;</button>
+
+        <button type="button" value="4">4</button>
+        <button type="button" value="5">5</button>
+        <button type="button" value="6">6</button>
+        <button type="button" class="operator" value="-">-</button>
+
+        <button type="button" value="1">1</button>
+        <button type="button" value="2">2</button>
+        <button type="button" value="3">3</button>
+        <button type="button" class="operator" value="+">+</button>
+
+        <button type="button" class="zero" value="0">0</button>
+        <button type="button" class="decimal" value=".">.</button>
+        <button type="button" class="equal-sign" value="=">=</button>
+
     </div>
+</div>
 
 <script src="main.js"></script>
 </body>
