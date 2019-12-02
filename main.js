@@ -21,54 +21,73 @@ const operate = (operator, a, b) =>{
             selectedOperator = operatorKeys[i];
         }
     }
-    result = operators[selectedOperator](a, b);
+    result = Number(Math.round(operators[selectedOperator](a, b) + 'e9') + 'e-9');
     return result;
 }
 
 
-
-
-
-
-
-// getting both numbers
+// number butttons
 const numberBtns = document.getElementsByClassName('number');
 
+// operator buttons
+const operatorBtns = document.getElementsByClassName('operator');
+
+// calculator display
 const display = document.getElementsByClassName('calculator-screen');
 
-const displayNums = function(){
-    let x = this.value;
-    if(display[0].value.length < 10 && typeof(operator) === 'undefined' && typeof(result) === 'undefined'){
-        display[0].value = (display[0].value + x) * 1;
-        a = parseInt(display[0].value);
-    } else{
-        display[0].value = 0;
-        if(display[0].value.length < 10){
-            display[0].value = (display[0].value + x) * 1;
-            b = parseInt(display[0].value);
-            if(typeof(result) !== 'undefined'){
-                a = result;
-            }
-        }
+
+// display the right numbers when clicked
+let firstInput = null; 
+const getFirstInput = function(){
+    let firstNum = this.value;  
+    // console.log(firstNum); 
+    if(secondInput === null && operator === null && display[0].value.length < 10){
+        display[0].value = (display[0].value + firstNum) * 1;
+        firstInput = parseInt(display[0].value);
+        console.log(firstInput);
     }
 };
 
-const getNums = Array.from(numberBtns).forEach(function(element){
-    element.addEventListener('click', displayNums);
-});
-
-
-
-// getting the operator
-const operatorBtns = document.getElementsByClassName('operator');
-
-const operatorFunc = function(){
-    operator = this.id;
+let secondInput = null;
+let result = null;
+const getSecInput = function(){
+    let secondNum = this.value;
+    // console.log(secondNum);
+    if(operator !== null && result === null && secondInput === null){
+        display[0].value = 0;
+    }
+    if(operator !== null && result === null && display[0].value.length < 10){
+        display[0].value = (display[0].value + secondNum) * 1;
+        secondInput = parseInt(display[0].value);
+        console.log(secondInput);
+    }
 };
 
-const getOperator = Array.from(operatorBtns).forEach(function(element){
-    element.addEventListener('click', operatorFunc);
+const numberBtnArray = Array.from(numberBtns);
+const numberSelected = numberBtnArray.forEach(element =>{                           element.addEventListener('click', getFirstInput);
+    element.addEventListener('click', getSecInput);
 });
+
+
+
+
+let operator = null;
+const operatorFunc = function(){
+    console.log(this.id);
+    operator = this.id;
+    // if(firstInput !== null && secondInput !== null && result === null){
+    //     display[0].value = operate(operator, firstInput, secondInput);
+    //     firstInput = display[0].value;
+    // }
+};
+
+const operatorBtnArray = Array.from(operatorBtns);
+const getOperator = operatorBtnArray.forEach(element => element.addEventListener('click', operatorFunc));
+
+
+
+
+
 
 
 // equals result
@@ -77,3 +96,27 @@ const equalsBtn = document.getElementsByClassName('equal-sign');
 const getResult = equalsBtn[0].addEventListener('click', function(){
     display[0].value = operate(operator, a, b);
 });
+
+
+
+
+
+
+
+// clear display and variables
+const clearBtn = document.getElementsByClassName('all-clear');
+
+const clear = clearBtn[0].addEventListener('click', function(){
+    display[0].value = 0;
+    a = undefined;
+    b = undefined;
+    result = undefined;
+});
+
+
+
+// BUGS LIST //
+
+// 3. When the clear function runs the first number selected will be assigned to 'b' instead of 'a'
+
+// 4. Shit.
