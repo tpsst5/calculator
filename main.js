@@ -143,3 +143,4 @@ const decimalBtn = document.getElementsByClassName('decimal');
 //      2. Figure out how to string together nums and multiple operators
 //      2. Add something for dividing by zero and NaN results(nums longer than 10 digits)  
 //      3. Add keyboard support
+//      4. If you have a result make sure you can use a new operator on that result
