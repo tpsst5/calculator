@@ -39,12 +39,14 @@ const display = document.getElementsByClassName('calculator-screen');
 // display the right numbers when clicked
 let firstInput = null; 
 const getFirstInput = function(){
-    let firstNum = this.value;  
-    // console.log(firstNum); 
+    let firstNum = this.value;
+    // console.log(firstNum);  
+    // console.log(typeof(firstNum));
+    // // console.log(firstNum); 
     if(secondInput === null && operator === null && display[0].value.length < 10){
         display[0].value = (display[0].value + firstNum) * 1;
-        firstInput = parseInt(display[0].value);
-        console.log(firstInput);
+        firstInput = parseInt(display[0].value, 10);
+        // console.log(firstInput);
     }
 };
 
@@ -58,8 +60,8 @@ const getSecInput = function(){
     }
     if(operator !== null && result === null && display[0].value.length < 10){
         display[0].value = (display[0].value + secondNum) * 1;
-        secondInput = parseInt(display[0].value);
-        console.log(secondInput);
+        secondInput = parseInt(display[0].value, 10);
+        // console.log(secondInput);
     }
 };
 
@@ -127,12 +129,30 @@ const decimalBtn = document.getElementsByClassName('decimal');
 // const insertDecimal = decimalBtn[0].addEventListener('click', function(){
 //     if(display[0].value == firstInput){
 //         display[0].value = display[0].value + ('.');
-//         firstInput = (firstInput / 100).toFixed(2);
+//         firstInput = parseInt(display[0].value);
+//         console.log(firstInput);
 //     }else if(display[0].value == secondInput){
 //         display[0].value = display[0].value + ('.');
 //         secondInput = Number((secondInput / 100).toFixed(0));
 //     }
 // });
+
+
+
+// keyboard support
+// const keyDepressed = document.addEventListener('keydown', logKey);
+
+// function logKey(e){
+//     let key = [e.code];
+//     // console.log(typeof(key));
+//     // console.log(key);
+//     console.log(this);
+//     console.log(key);
+// }
+
+
+
+
 
 
 
