@@ -73,34 +73,26 @@ const numberSelected = numberBtnArray.forEach(element =>{                       
 
 let operator = null;
 const operatorFunc = function(){
-    console.log(this.id);
+    // console.log(this.id);
     operator = this.id;
+
     // if(firstInput !== null && secondInput !== null && result === null){
     //     display[0].value = operate(operator, firstInput, secondInput);
     //     firstInput = display[0].value;
     // }
 };
 
+
 const operatorBtnArray = Array.from(operatorBtns);
 const getOperator = operatorBtnArray.forEach(element => element.addEventListener('click', operatorFunc));
-
-
-
-
-
 
 
 // equals result
 const equalsBtn = document.getElementsByClassName('equal-sign');
 
 const getResult = equalsBtn[0].addEventListener('click', function(){
-    display[0].value = operate(operator, a, b);
+    display[0].value = operate(operator, firstInput, secondInput);
 });
-
-
-
-
-
 
 
 // clear display and variables
@@ -108,15 +100,45 @@ const clearBtn = document.getElementsByClassName('all-clear');
 
 const clear = clearBtn[0].addEventListener('click', function(){
     display[0].value = 0;
-    a = undefined;
-    b = undefined;
-    result = undefined;
+    firstInput = null;
+    secondInput = null;
+    result = null;
+    operator = null;
 });
 
 
+// delete last number input
+const deleteBtn = document.getElementsByClassName('delete');
 
-// BUGS LIST //
+const deleteLastInput = deleteBtn[0].addEventListener('click', function(){
+    if(display[0].value == firstInput){
+        display[0].value = display[0].value.substring(0, display[0].value.length - 1);
+        firstInput = Math.floor(firstInput / 1e1);
+    }else if(display[0].value == secondInput){
+        display[0].value = display[0].value.substring(0, display[0].value.length - 1);
+        secondInput = Math.floor(secondInput / 1e1);
+    }
+});
 
-// 3. When the clear function runs the first number selected will be assigned to 'b' instead of 'a'
 
-// 4. Shit.
+// insert decimal point to either input
+const decimalBtn = document.getElementsByClassName('decimal');
+
+// const insertDecimal = decimalBtn[0].addEventListener('click', function(){
+//     if(display[0].value == firstInput){
+//         display[0].value = display[0].value + ('.');
+//         firstInput = (firstInput / 100).toFixed(2);
+//     }else if(display[0].value == secondInput){
+//         display[0].value = display[0].value + ('.');
+//         secondInput = Number((secondInput / 100).toFixed(0));
+//     }
+// });
+
+
+
+
+// TO DO:
+
+//      1. Fix insertDecimal
+//      2. Figure out how to string together nums and multiple operators
+//      2. Add something for dividing by zero and NaN results(nums longer than 10 digits)  
