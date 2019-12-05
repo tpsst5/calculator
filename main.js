@@ -22,7 +22,8 @@ const operate = (operator, a, b) =>{
         }
     }
     result = Number(Math.round(operators[selectedOperator](a, b) + 'e9') + 'e-9');
-    return result;
+    
+    return (isNaN(result)) ? 'Stop that!' : result;
 }
 
 
@@ -74,14 +75,18 @@ const numberSelected = numberBtnArray.forEach(element =>{                       
 
 
 let operator = null;
+let operatorArray = [];
 const operatorFunc = function(){
-    // console.log(this.id);
     operator = this.id;
-
-    // if(firstInput !== null && secondInput !== null && result === null){
-    //     display[0].value = operate(operator, firstInput, secondInput);
-    //     firstInput = display[0].value;
-    // }
+    operatorArray.push(operator);
+    let operatorInput = operatorArray[operatorArray.length - 2];
+    console.log(operatorInput);
+    if(firstInput !== null && secondInput !== null){
+        display[0].value = operate(operatorInput, firstInput, secondInput);
+        firstInput = result;
+        result = null;
+        secondInput = null;
+    }
 };
 
 
@@ -160,7 +165,5 @@ const decimalBtn = document.getElementsByClassName('decimal');
 // TO DO:
 
 //      1. Fix insertDecimal
-//      2. Figure out how to string together nums and multiple operators
-//      2. Add something for dividing by zero and NaN results(nums longer than 10 digits)  
+//      2. Result will go over 10 character limit if there's more than 1 digit before the decimal
 //      3. Add keyboard support
-//      4. If you have a result make sure you can use a new operator on that result
