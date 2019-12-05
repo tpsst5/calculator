@@ -21,7 +21,7 @@ const operate = (operator, a, b) =>{
             selectedOperator = operatorKeys[i];
         }
     }
-    result = Number(Math.round(operators[selectedOperator](a, b) + 'e9') + 'e-9');
+    result = Number(Math.round(operators[selectedOperator](a, b) + 'e7') + 'e-7');
     
     return (isNaN(result)) ? 'Stop that!' : result;
 }
