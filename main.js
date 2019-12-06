@@ -41,13 +41,10 @@ const display = document.getElementsByClassName('calculator-screen');
 let firstInput = null; 
 const getFirstInput = function(){
     let firstNum = this.value;
-    // console.log(firstNum);  
-    // console.log(typeof(firstNum));
-    // // console.log(firstNum); 
     if(secondInput === null && operator === null && display[0].value.length < 10){
         display[0].value = (display[0].value + firstNum) * 1;
-        firstInput = parseInt(display[0].value, 10);
-        // console.log(firstInput);
+        firstInput = parseFloat(display[0].value, 10);
+        console.log(firstInput);
     }
 };
 
@@ -55,15 +52,15 @@ let secondInput = null;
 let result = null;
 const getSecInput = function(){
     let secondNum = this.value;
-    // console.log(secondNum);
     if(operator !== null && result === null && secondInput === null){
         display[0].value = 0;
+        decimal = null;
     }
     if(operator !== null && result === null && display[0].value.length < 10){
         display[0].value = (display[0].value + secondNum) * 1;
-        secondInput = parseInt(display[0].value, 10);
-        // console.log(secondInput);
-    }
+        secondInput = parseFloat(display[0].value, 10);
+        console.log(secondInput);
+    } 
 };
 
 const numberBtnArray = Array.from(numberBtns);
@@ -111,6 +108,7 @@ const clear = clearBtn[0].addEventListener('click', function(){
     secondInput = null;
     result = null;
     operator = null;
+    decimal = null;
 });
 
 
@@ -131,17 +129,18 @@ const deleteLastInput = deleteBtn[0].addEventListener('click', function(){
 // insert decimal point to either input
 const decimalBtn = document.getElementsByClassName('decimal');
 
-// const insertDecimal = decimalBtn[0].addEventListener('click', function(){
-//     if(display[0].value == firstInput){
-//         display[0].value = display[0].value + ('.');
-//         firstInput = parseInt(display[0].value);
-//         console.log(firstInput);
-//     }else if(display[0].value == secondInput){
-//         display[0].value = display[0].value + ('.');
-//         secondInput = Number((secondInput / 100).toFixed(0));
-//     }
-// });
-
+let decimal = null;
+const insertDecimal = decimalBtn[0].addEventListener('click', function(){
+    decimal = decimal + 1;
+    if(result === null && secondInput === null && decimal < 2 && operator === null){
+        display[0].value = display[0].value + ('.');
+    } else if(result === null && secondInput === null && decimal < 2){
+        display[0].value = ('0.');
+    } else if(operator !== null && result === null && decimal < 2){
+        display[0].value = display[0].value + ('.');
+    }
+});
+// issue when adding a second input that starts with a decimal. Also check stringing together multiple num ie; 3.2 + 4.2 - 6.9.
 
 
 // keyboard support
