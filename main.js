@@ -54,7 +54,7 @@ const getSecInput = function(){
     let secondNum = this.value;
     if(operator !== null && result === null && secondInput === null){
         display[0].value = 0;
-        decimal = null;
+        // decimal = null;
     }
     if(operator !== null && result === null && display[0].value.length < 10){
         display[0].value = (display[0].value + secondNum) * 1;
@@ -76,6 +76,7 @@ let operatorArray = [];
 const operatorFunc = function(){
     operator = this.id;
     operatorArray.push(operator);
+    decimal = null;
     let operatorInput = operatorArray[operatorArray.length - 2];
     console.log(operatorInput);
     if(firstInput !== null && secondInput !== null){
@@ -135,12 +136,13 @@ const insertDecimal = decimalBtn[0].addEventListener('click', function(){
     if(result === null && secondInput === null && decimal < 2 && operator === null){
         display[0].value = display[0].value + ('.');
     } else if(result === null && secondInput === null && decimal < 2){
-        display[0].value = ('0.');
+        display[0].value = '0.';
+        secondInput = '0.';
     } else if(operator !== null && result === null && decimal < 2){
         display[0].value = display[0].value + ('.');
     }
 });
-// issue when adding a second input that starts with a decimal. Also check stringing together multiple num ie; 3.2 + 4.2 - 6.9.
+//  Issue using DEL btn.
 
 
 // keyboard support
