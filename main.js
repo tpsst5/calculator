@@ -119,10 +119,18 @@ const deleteBtn = document.getElementsByClassName('delete');
 const deleteLastInput = deleteBtn[0].addEventListener('click', function(){
     if(display[0].value == firstInput){
         display[0].value = display[0].value.substring(0, display[0].value.length - 1);
-        firstInput = Math.floor(firstInput / 1e1);
+        firstInput = firstInput.toString();
+        if(firstInput[firstInput.length - 1] === '.'){
+            decimal = decimal - 1;
+        }
+        firstInput = firstInput.substring(0, firstInput.length - 1);
     }else if(display[0].value == secondInput){
         display[0].value = display[0].value.substring(0, display[0].value.length - 1);
-        secondInput = Math.floor(secondInput / 1e1);
+        secondInput = secondInput.toString();
+        if(secondInput[secondInput.length - 1] === '.'){
+            decimal = decimal - 1;
+        }
+        secondInput = secondInput.substring(0, secondInput.length - 1);
     }
 });
 
@@ -142,7 +150,6 @@ const insertDecimal = decimalBtn[0].addEventListener('click', function(){
         display[0].value = display[0].value + ('.');
     }
 });
-//  Issue using DEL btn.
 
 
 // keyboard support
@@ -165,6 +172,6 @@ const insertDecimal = decimalBtn[0].addEventListener('click', function(){
 
 // TO DO:
 
-//      1. Fix insertDecimal
-//      2. Result will go over 10 character limit if there's more than 1 digit before the decimal
-//      3. Add keyboard support
+//      1. Can't start with a negative number
+//      2. Add keyboard support
+//      3. Check negative numbers
