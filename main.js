@@ -44,7 +44,6 @@ const getFirstInput = function(){
     if(secondInput === null && operator === null && display[0].value.length < 10){
         display[0].value = (display[0].value + firstNum) * 1;
         firstInput = parseFloat(display[0].value, 10);
-        console.log(firstInput);
     }
 };
 
@@ -54,12 +53,10 @@ const getSecInput = function(){
     let secondNum = this.value;
     if(operator !== null && result === null && secondInput === null){
         display[0].value = 0;
-        // decimal = null;
     }
     if(operator !== null && result === null && display[0].value.length < 10){
         display[0].value = (display[0].value + secondNum) * 1;
         secondInput = parseFloat(display[0].value, 10);
-        console.log(secondInput);
     } 
 };
 
@@ -78,7 +75,6 @@ const operatorFunc = function(){
     operatorArray.push(operator);
     decimal = null;
     let operatorInput = operatorArray[operatorArray.length - 2];
-    console.log(operatorInput);
     if(firstInput !== null && secondInput !== null){
         display[0].value = operate(operatorInput, firstInput, secondInput);
         firstInput = result;
@@ -172,6 +168,5 @@ const insertDecimal = decimalBtn[0].addEventListener('click', function(){
 
 // TO DO:
 
-//      1. Can't start with a negative number
+//      1. Can't start either number input with a negative
 //      2. Add keyboard support
-//      3. Check negative numbers
