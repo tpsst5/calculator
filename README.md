@@ -4,10 +4,10 @@
 This project was complete following The Odin Project's [curriculum](https://www.theodinproject.com/courses/web-development-101/lessons/calculator). The purpose was to create a simple calculator using the technologies listed below.
 
 ## Screenshot:
-![Calculator][1]
+![Calculator screenshot][1]
 
 [1]:
-(file:///Users/timothyshea/Desktop/Odin/calculator/calculator.png)
+(calculator.png)
 ## Technologies:
 - HTML
 - CSS
