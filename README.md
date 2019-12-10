@@ -7,7 +7,7 @@ This project was complete following The Odin Project's [curriculum](https://www.
 ![Calculator screenshot][1]
 
 [1]:
-(calculator.png)
+(/images/calculator.png)
 ## Technologies:
 - HTML
 - CSS
