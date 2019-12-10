@@ -148,25 +148,23 @@ const insertDecimal = decimalBtn[0].addEventListener('click', function(){
 });
 
 
-// keyboard support
-// const keyDepressed = document.addEventListener('keydown', logKey);
-
-// function logKey(e){
-//     let key = [e.code];
+// const logKeyDown = function(e){
+//     let key = [e.key];
+//     if(key[0] === '.'){
+//         console.log('dot');
+//     }
 //     // console.log(typeof(key));
 //     // console.log(key);
-//     console.log(this);
-//     console.log(key);
-// }
-
-
-
-
-
-
+//     // console.log(this);
+//     console.log(key[0]);
+//     // console.log(typeof(key[0]));
+// };
+// // keyboard support
+// const keyDepressed = document.addEventListener('keydown', logKeyDown);
 
 
 // TO DO:
 
 //      1. Can't start either number input with a negative
 //      2. Add keyboard support
+//      3. Add commas 
