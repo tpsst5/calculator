@@ -13,4 +13,4 @@ This project was complete following The Odin Project's [curriculum](https://www.
 ## Setup: 
 The live version of the webpage can be seen [here](https://tpsst5.github.io/calculator/).
 ## Status:
-Adding functionality to input negative numbers and keyboard support in the future. 
+This project is complete. If I come back to this in the future I'd like to add keyboard support and the ability to print out additional digits in the result if needed.
