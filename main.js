@@ -22,7 +22,6 @@ const operate = (operator, a, b) =>{
         }
     }
     result = Number(Math.round(operators[selectedOperator](a, b) + 'e7') + 'e-7');
-    
     return (isNaN(result)) ? 'Stop that!' : result;
 }
 
@@ -154,37 +153,8 @@ const plusMinus = plusMinusBtn[0].addEventListener('click', function(){
     if(result === null && secondInput === null && operator === null){
         display[0].value = -(display[0].value);
         firstInput = parseFloat(display[0].value, 10);
-    // } else if(result === null && secondInput === null && decimal < 2){
-    //     display[0].value = '0.';
-    //     secondInput = '0.';
     } else if(operator !== null && result === null){
         display[0].value = -(display[0].value);
         secondInput = parseFloat(display[0].value, 10);
     }
 });
-
-
-
-
-
-
-// const logKeyDown = function(e){
-//     let key = [e.key];
-//     if(key[0] === '.'){
-//         console.log('dot');
-//     }
-//     // console.log(typeof(key));
-//     // console.log(key);
-//     // console.log(this);
-//     console.log(key[0]);
-//     // console.log(typeof(key[0]));
-// };
-// // keyboard support
-// const keyDepressed = document.addEventListener('keydown', logKeyDown);
-
-
-// TO DO:
-
-//      1. Can't start either number input with a negative
-//      2. Add keyboard support
-//      3. Add commas 
